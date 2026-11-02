@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1793641242199",
+    "name": "Ali Ahmed",
+    "email": "ali@example.com",
+    "phone": "03001234567",
+    "service": "Dental Care",
+    "doctor": "Dr. Usman Malik",
+    "date": "2026-11-10",
+    "message": "I need a dental consultation.",
+    "status": "Pending",
+    "createdAt": "2026-11-02T17:40:42.201Z"
+  },
+  {
+    "id": "1793641475773",
+    "name": "safia",
+    "email": "safia@gmail.com",
+    "phone": "03362327095",
+    "service": "Women's Health",
+    "doctor": "Dr. Ahmed Khan",
+    "date": "2027-01-01",
+    "message": "abc",
+    "status": "Pending",
+    "createdAt": "2026-11-02T17:44:35.773Z"
+  }
+]

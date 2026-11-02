@@ -1,0 +1,200 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediCare Plus | Admin Dashboard</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+<div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+        <div class="brand">
+            <div class="brand-icon">✚</div>
+            <div>
+                <h2>MediCare<span>+</span></h2>
+                <small>CLINIC MANAGEMENT</small>
+            </div>
+        </div>
+
+        <div class="nav-label">MENU</div>
+
+        <a href="admin.html" class="nav-link active">
+            <span>▦</span> Dashboard
+        </a>
+
+        <a href="#appointments" class="nav-link">
+            <span>▤</span> Appointments
+        </a>
+
+        <a href="/" class="nav-link">
+            <span>⌂</span> View Website
+        </a>
+
+        <div class="sidebar-bottom">
+            <div class="profile">
+                <div class="avatar">AD</div>
+                <div>
+                    <strong>Admin User</strong>
+                    <small>Demo Administrator</small>
+                </div>
+            </div>
+            <button id="logoutBtn" class="logout-btn">Log Out</button>
+        </div>
+    
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main">
+
+        <header class="topbar">
+            <div class="mobile-brand">
+                <button id="menuToggle" class="menu-btn">☰</button>
+                <strong>MediCare+</strong>
+            </div>
+
+            <div class="welcome">
+                <h1>Dashboard Overview</h1>
+                <p>Manage your clinic appointments and activities.</p>
+            </div>
+
+            <div class="top-actions">
+                <span class="live-status">
+                    <span class="live-dot"></span> System Online
+                </span>
+                <div class="avatar">AD</div>
+            </div>
+        </header>
+
+        <!-- STATISTICS -->
+        <section class="stats-grid">
+
+            <div class="stat-card">
+                <div class="stat-top">
+                    <span>Total Appointments</span>
+                    <span class="stat-icon blue">▤</span>
+                </div>
+                <h2 id="total">0</h2>
+                <small>All appointment requests</small>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-top">
+                    <span>Pending</span>
+                    <span class="stat-icon orange">◷</span>
+                </div>
+                <h2 id="pending">0</h2>
+                <small>Waiting for confirmation</small>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-top">
+                    <span>Confirmed</span>
+                    <span class="stat-icon green">✓</span>
+                </div>
+                <h2 id="confirmed">0</h2>
+                <small>Approved appointments</small>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-top">
+                    <span>Completed</span>
+                    <span class="stat-icon purple">★</span>
+                </div>
+                <h2 id="completed">0</h2>
+                <small>Completed visits</small>
+            </div>
+
+        </section>
+
+        <!-- APPOINTMENTS -->
+        <section class="content-card" id="appointments">
+
+            <div class="section-header">
+                <div>
+                    <h2>Appointment Management</h2>
+                    <p>View and manage patient appointment requests.</p>
+                </div>
+
+                <button class="refresh-btn" id="refreshBtn">
+                    ↻ Refresh
+                </button>
+            </div>
+
+            <!-- SEARCH AND FILTER -->
+            <div class="toolbar">
+
+                <div class="search-box">
+                    <span>⌕</span>
+                    <input
+                        type="search"
+                        id="searchInput"
+                        placeholder="Search patient, doctor or phone...">
+                </div>
+
+                <select id="statusFilter">
+                    <option value="All">All Status</option>
+                    <option value="Pending">Pending</option>
+                    <option value="Confirmed">Confirmed</option>
+                    <option value="Completed">Completed</option>
+                    <option value="Cancelled">Cancelled</option>
+                </select>
+
+            </div>
+
+            <div id="message" role="status"></div>
+
+            <!-- APPOINTMENT TABLE -->
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>PATIENT</th>
+                            <th>SERVICE</th>
+                            <th>DOCTOR</th>
+                            <th>DATE</th>
+                            <th>STATUS</th>
+                            <th>ACTIONS</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="appointmentTable">
+                        <tr>
+                            <td colspan="6">Loading appointments...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="table-footer">
+                <span id="recordCount">0 appointments</span>
+                <span>Live data from clinic server</span>
+            </div>
+
+        </section>
+
+        <footer class="footer">
+            © 2026 MediCare Plus. Clinic Management Demo.
+        </footer>
+
+    </main>
+</div>
+
+<!-- APPOINTMENT DETAILS MODAL -->
+<div class="modal-overlay" id="detailsModal">
+    <div class="modal">
+        <div class="modal-header">
+            <h2>Appointment Details</h2>
+            <button id="closeModal">✕</button>
+        </div>
+        <div id="modalContent"></div>
+    </div>
+</div>
+
+<script src="admin.js"></script>
+</body>
+</html>

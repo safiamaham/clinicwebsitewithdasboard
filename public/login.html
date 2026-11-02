@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login | MediCare Plus</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+    <main class="login-wrapper">
+        <div class="login-card">
+
+            <div class="brand">
+                <div class="brand-icon">+</div>
+                <h1>MediCare<span>Plus</span></h1>
+            </div>
+
+            <p class="welcome">Welcome Back</p>
+            <h2>Admin Login</h2>
+            <p class="subtitle">Sign in to manage your clinic dashboard.</p>
+
+            <form id="loginForm">
+                <label for="email">Email Address</label>
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="admin@medicareplus.com"
+                    required
+                >
+
+                <label for="password">Password</label>
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Enter your password"
+                    required
+                >
+
+                <p id="loginMessage"></p>
+
+                <button type="submit" id="loginButton">
+                    Sign In to Dashboard
+                </button>
+            </form>
+
+            <a href="/" class="back-link">← Back to Website</a>
+
+            <p class="footer">© 2026 MediCare Plus. All rights reserved.</p>
+        </div>
+    </main>
+
+    <script src="login.js"></script>
+</body>
+</html>
